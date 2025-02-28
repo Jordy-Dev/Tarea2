@@ -28,5 +28,6 @@
         android:id="@+id/btnEliminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
         android:text="Eliminar" />
 </LinearLayout>
