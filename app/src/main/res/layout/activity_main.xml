@@ -52,7 +52,7 @@
             android:background="@android:color/transparent"/>
     </FrameLayout>
 
-    <!-- Botón para agregar contacto -->
+    <!-- Botón para agregar o editar contacto -->
     <Button
         android:id="@+id/btnAgregar"
         android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
         android:backgroundTint="@color/celeste"
         android:layout_marginBottom="16dp" />
 
-    <!-- ListView para mostrar los contactos con botones de eliminar -->
+    <!-- ListView para mostrar los contactos con botones de eliminar y editar -->
     <ListView
         android:id="@+id/listViewContactos"
         android:layout_width="match_parent"

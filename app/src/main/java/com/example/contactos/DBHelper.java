@@ -1,5 +1,6 @@
 package com.example.contactos;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -55,5 +56,21 @@ public class DBHelper extends SQLiteOpenHelper {
     public Cursor getAllContactos() {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+    }
+
+    // Actualizar un contacto
+    public boolean updateContacto(int id, String nombre, String telefono) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Usar ContentValues para los valores que vamos a actualizar
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2, nombre);  // Columna NOMBRE
+        contentValues.put(COL_3, telefono); // Columna TELEFONO
+
+        // Actualizar el contacto con el ID correspondiente
+        int result = db.update(TABLE_NAME, contentValues, COL_1 + " = ?", new String[]{String.valueOf(id)});
+
+        // Retornar si la actualización fue exitosa
+        return result > 0;
     }
 }
